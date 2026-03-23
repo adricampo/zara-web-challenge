@@ -1,6 +1,6 @@
 # Zara Web Challenge — Smartphone Catalog
 
-Aplicación web de catálogo de smartphones desarrollada como prueba técnica para Zara / Inditex.
+Aplicación web de catálogo de smartphones desarrollada como prueba técnica para Zara / Inditex: https://zara-web-challenge-sage.vercel.app/
 
 ## Stack
 
