@@ -1,0 +1,101 @@
+@use '../../styles/variables.scss' as *;
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-background);
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    transform: translateY(100%);
+    transition: transform 0.35s ease;
+    z-index: 0;
+  }
+
+  &:hover::after {
+    transform: translateY(0);
+  }
+
+  &:hover .brand {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:hover .name,
+  &:hover .price {
+    color: #fff;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--spacing-lg);
+  min-height: 0;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 257px;
+  flex-shrink: 0;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+}
+
+.image {
+  object-fit: contain;
+  padding: var(--spacing-lg);
+}
+
+.info {
+  flex-shrink: 0;
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.brand {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+  transition: color 0.35s ease;
+  margin-bottom: var(--spacing-xs);
+}
+
+.name {
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  transition: color 0.35s ease;
+}
+
+.price {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.35s ease;
+}

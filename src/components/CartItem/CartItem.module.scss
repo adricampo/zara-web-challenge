@@ -1,0 +1,80 @@
+@use '../../styles/variables.scss' as *;
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
+
+  @include tablet-and-up {
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-2xl) 0;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 160px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  background-color: var(--color-background);
+
+  @include tablet-and-up {
+    width: 240px;
+  }
+}
+
+.image {
+  object-fit: contain;
+  padding: var(--spacing-sm);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+  padding: var(--spacing-sm) 0;
+}
+
+.name {
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+}
+
+.specs {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: 0.02em;
+}
+
+.price {
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  margin-bottom: var(--spacing-xl);
+}
+
+.removeBtn {
+  display: inline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #c0392b;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  padding: 0;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #c0392b;
+    outline-offset: 2px;
+  }
+}

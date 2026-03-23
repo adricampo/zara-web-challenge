@@ -1,0 +1,44 @@
+@use '../../styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-text-primary);
+  padding: var(--spacing-sm) 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  background: transparent;
+  outline: none;
+  appearance: none;
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
+
+  &:focus {
+    border-bottom-color: var(--color-text-primary);
+  }
+
+  /* Remove default search input styling */
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.results {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  letter-spacing: 0.05em;
+  text-align: left;
+}

@@ -1,0 +1,121 @@
+@use '../../../styles/variables.scss' as *;
+
+.container {
+  padding: var(--spacing-xl) var(--padding-page-mobile);
+
+  @include tablet-and-up {
+    padding: var(--spacing-2xl) var(--padding-page-tablet);
+  }
+
+  @include desktop-and-up {
+    padding: var(--spacing-3xl) var(--padding-page-desktop);
+  }
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include tablet-and-up {
+    flex-direction: row;
+    gap: var(--spacing-3xl);
+    align-items: flex-start;
+  }
+}
+
+.imageCol {
+  width: 100%;
+
+  @include tablet-and-up {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.productImage {
+  object-fit: contain;
+  padding: var(--spacing-2xl);
+}
+
+.infoCol {
+  flex: 1;
+  min-width: 0;
+}
+
+.productName {
+  font-size: var(--font-size-2xl);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.price {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.addBtn {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-lg);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  text-transform: uppercase;
+  margin-top: var(--spacing-xl);
+}
+
+.addBtnActive {
+  background-color: var(--color-button-active-bg);
+  color: var(--color-button-active-text);
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+  }
+}
+
+.addBtnDisabled {
+  background-color: var(--color-button-disabled-bg);
+  color: var(--color-button-disabled-text);
+  cursor: not-allowed;
+}
+
+.specsWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.similarSection {
+  max-width: 1200px;
+  margin: var(--spacing-3xl) auto 0;
+  padding-top: var(--spacing-xl);
+}
+
+.similarHeading {
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xl);
+}
