@@ -60,7 +60,7 @@ export function ProductListingClient({ initialProducts, initialError }: ProductL
     return () => {
       cancelled = true;
     };
-  }, [debouncedSearch]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [debouncedSearch]);
 
   return (
     <div className={styles.container}>

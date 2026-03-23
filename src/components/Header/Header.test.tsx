@@ -3,9 +3,16 @@ import React from 'react';
 import { Header } from './Header';
 import { CartProvider } from '@/context/CartContext';
 
-// Mock next/link
 jest.mock('next/link', () => {
-  return function Link({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) {
+  return function Link({
+    children,
+    href,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string;
+    [key: string]: unknown;
+  }) {
     return (
       <a href={href} {...props}>
         {children}

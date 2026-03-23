@@ -10,14 +10,25 @@ jest.mock('next/link', () => {
 
 jest.mock('next/image', () => {
   return function Image({ src, alt }: { src: string; alt: string }) {
-    // eslint-disable-next-line @next/next/no-img-element
     return <img src={src} alt={alt} />;
   };
 });
 
 const mockProducts = [
-  { id: '1', brand: 'Apple', name: 'iPhone 15', basePrice: 999, imageUrl: 'https://example.com/1.jpg' },
-  { id: '2', brand: 'Samsung', name: 'Galaxy S24', basePrice: 899, imageUrl: 'https://example.com/2.jpg' },
+  {
+    id: '1',
+    brand: 'Apple',
+    name: 'iPhone 15',
+    basePrice: 999,
+    imageUrl: 'https://example.com/1.jpg',
+  },
+  {
+    id: '2',
+    brand: 'Samsung',
+    name: 'Galaxy S24',
+    basePrice: 899,
+    imageUrl: 'https://example.com/2.jpg',
+  },
 ];
 
 describe('ProductGrid', () => {

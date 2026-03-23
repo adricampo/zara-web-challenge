@@ -3,14 +3,33 @@ import React from 'react';
 import { ProductCard } from './ProductCard';
 
 jest.mock('next/link', () => {
-  return function Link({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) {
-    return <a href={href} {...props}>{children}</a>;
+  return function Link({
+    children,
+    href,
+    ...props
+  }: {
+    children: React.ReactNode;
+    href: string;
+    [key: string]: unknown;
+  }) {
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
   };
 });
 
 jest.mock('next/image', () => {
-  return function Image({ src, alt, ...props }: { src: string; alt: string; [key: string]: unknown }) {
-    // eslint-disable-next-line @next/next/no-img-element
+  return function Image({
+    src,
+    alt,
+    ...props
+  }: {
+    src: string;
+    alt: string;
+    [key: string]: unknown;
+  }) {
     return <img src={src} alt={alt} {...props} />;
   };
 });
